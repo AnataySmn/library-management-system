@@ -2,11 +2,14 @@ var express = require('express');
 var router = express.Router();
 const User = require('../models/user');
 const passport = require('passport');
+const app = express();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+
+
 
 // GET handler for /login
 router.get('/login', (req, res, next) => {

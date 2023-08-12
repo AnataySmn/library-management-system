@@ -7,10 +7,14 @@ const mongoose = require('mongoose');
 const expHbs = require('express-handlebars');
 const hbs = require('hbs');
 
+
 var indexRouter = require('./routes/index');
 var booksRouter = require('./routes/book');
 
 var app = express();
+
+
+
 
 const passport = require('passport');
 const session = require('express-session');
@@ -82,6 +86,7 @@ mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: 
   });
 
 
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -97,5 +102,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;
