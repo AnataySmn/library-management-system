@@ -1,0 +1,31 @@
+{{> header}}
+<h1>
+  Here you can add new book
+</h1>
+{{!-- Add links to CRUD operations --}}
+<a href="/books/add">Add a new book</a>
+
+{{!-- To Show data --}}
+<table class="table table-striped table-hover">
+  <thead>
+    <th>Name</th>
+    <th>Author Name</th>
+    <th>Genres</th>
+    <th>Price</th>
+  </thead>
+  <tbody>
+  {{#each dataset}}
+    <tr>
+      <td>{{this.name}}</Td>
+      <td>{{this.author_name}}</Td>
+      <td>{{this.genres}}</Td>
+      <td>{{this.price}}</Td>
+      <td><a href="/books/edit/{{this._id}}" 
+      class="btn btn-primary">Edit</a>
+        <a href="/books/delete/{{this._id}}" 
+      class="btn btn-danger"
+        onclick="return confirmDeletion();">Delete</a></td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
