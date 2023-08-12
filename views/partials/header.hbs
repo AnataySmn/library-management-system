@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Library Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Online Library Management System</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/books">Books</a></li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          {{#if user}}
+            <li class="nav-item"><a class="nav-link" href="#">{{user.username}}</a></li>
+          {{else}}
+            <li class="nav-item"><a class="nav-link" href="/Register">Register</a></li>
+            <li class="nav-item"><a class="nav-link" href="/Login">Login</a></li>
+          {{/if}}
+        </ul>
+    </nav>
